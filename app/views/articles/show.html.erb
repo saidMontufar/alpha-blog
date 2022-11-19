@@ -8,7 +8,17 @@
 </head>
 <body>
     <h1>Show article details</h1>
-    <p>Tiltle: <%= @article.title %></p>
-    <p>Description: <%= @article.description %></p>
+    <p>
+        Tiltle: <%= @article.title %> #--> Instansiated @article from show controller
+    </p>
+    <p>
+        Description: <%= @article.description %>
+    </p>
+    <p>
+        <%=link_to 'Delete', article_path(@article), data: { turbo_confirm: "Are you sure?", turbo_method: :delete }%> |
+        <%=link_to 'Edit', edit_article_path(@article)%> |
+        <%=link_to 'Back to index', articles_path(@article)%>
+    </p>
+
 </body>
 </html>
